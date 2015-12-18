@@ -21,7 +21,12 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
 			'rules' => [
-                'register' => 'account/register'
+                'register' => 'account/register',
+                //information
+                'about' => 'information/about',
+                'about' => 'information/delivery',
+                'about' => 'information/policy',
+                'about' => 'information/term',
             ]
         ],
         'log' => [

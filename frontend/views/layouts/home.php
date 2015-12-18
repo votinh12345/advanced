@@ -17,7 +17,6 @@ AppAsset::register($this);
         <title>Your Store</title>        
         <meta name="description" content="My Store" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link href="http://demo.opencart.com/image/catalog/cart.png" rel="icon" />     
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto">
         <?= Html::csrfMetaTags() ?>
         <?php $this->head() ?>  

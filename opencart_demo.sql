@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2015-12-17 17:21:34
+Date: 2015-12-18 16:28:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,13 +34,14 @@ CREATE TABLE `address` (
   `custom_field` text NOT NULL,
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of address
 -- ----------------------------
 INSERT INTO `address` VALUES ('1', '1', 'nguyen', 'hien', 'test', 'test1', 'test1', 'ha noi', 'admin', '230', '3776', '');
 INSERT INTO `address` VALUES ('2', '2', 'nguyen', 'hien', '', 'tessssssss', '', 'aaaaa', 'admin', '222', '3602', '');
+INSERT INTO `address` VALUES ('3', '3', 'nguyen', 'hien', 'aaaaa', 'tessss', 'aaaaa', 'aaaddd', '1234', '230', '3776', '');
 
 -- ----------------------------
 -- Table structure for affiliate
@@ -399,7 +400,7 @@ CREATE TABLE `cart` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`cart_id`),
   KEY `cart_id` (`customer_id`,`session_id`,`product_id`,`recurring_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cart
@@ -1058,9 +1059,9 @@ CREATE TABLE `currency` (
 -- ----------------------------
 -- Records of currency
 -- ----------------------------
-INSERT INTO `currency` VALUES ('1', 'Pound Sterling', 'GBP', '£', '', '2', '0.66829997', '1', '2015-12-17 07:59:06');
-INSERT INTO `currency` VALUES ('2', 'US Dollar', 'USD', '$', '', '2', '1.00000000', '1', '2015-12-17 07:59:06');
-INSERT INTO `currency` VALUES ('3', 'Euro', 'EUR', '', '€', '2', '0.92030001', '1', '2015-12-17 07:59:06');
+INSERT INTO `currency` VALUES ('1', 'Pound Sterling', 'GBP', '£', '', '2', '0.66949999', '1', '2015-12-18 08:50:53');
+INSERT INTO `currency` VALUES ('2', 'US Dollar', 'USD', '$', '', '2', '1.00000000', '1', '2015-12-18 08:50:53');
+INSERT INTO `currency` VALUES ('3', 'Euro', 'EUR', '', '€', '2', '0.92089999', '1', '2015-12-18 08:50:53');
 
 -- ----------------------------
 -- Table structure for customer
@@ -1089,13 +1090,14 @@ CREATE TABLE `customer` (
   `token` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer
 -- ----------------------------
 INSERT INTO `customer` VALUES ('1', '1', '0', 'nguyen', 'hien', 'nguyenhien120@gmail.com', '01649607100', '123', 'ddca239854839b539f0c23370d37984b7379b005', 'SGzzockkC', null, null, '1', '1', '', '127.0.0.1', '1', '1', '0', '', '2015-10-21 16:59:04');
 INSERT INTO `customer` VALUES ('2', '1', '0', 'nguyen', 'hien', 'nguyenhien@gmail.com', '12345', '1111', '81291fc75f142641ba80af503c0ab7318f9ec753', 'vtUtCw9jx', null, null, '0', '2', '', '127.0.0.1', '1', '1', '0', '', '2015-12-01 09:53:38');
+INSERT INTO `customer` VALUES ('3', '1', '0', 'nguyen', 'hien', 'hien@gmail.com', '123456', '11111', 'a1fc08e3364dc4318d02dfe0739d82af97d15bbe', '1aL4qw50U', null, null, '0', '3', '', '127.0.0.1', '1', '1', '0', '', '2015-12-18 10:18:11');
 
 -- ----------------------------
 -- Table structure for customer_activity
@@ -1109,7 +1111,7 @@ CREATE TABLE `customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer_activity
@@ -1117,6 +1119,8 @@ CREATE TABLE `customer_activity` (
 INSERT INTO `customer_activity` VALUES ('1', '1', 'register', '{\"customer_id\":1,\"name\":\"nguyen hien\"}', '127.0.0.1', '2015-10-21 16:59:05');
 INSERT INTO `customer_activity` VALUES ('2', '1', 'order_account', '{\"customer_id\":\"1\",\"name\":\"nguyen hien\",\"order_id\":1}', '127.0.0.1', '2015-10-21 17:01:19');
 INSERT INTO `customer_activity` VALUES ('3', '2', 'register', '{\"customer_id\":2,\"name\":\"nguyen hien\"}', '127.0.0.1', '2015-12-01 09:53:39');
+INSERT INTO `customer_activity` VALUES ('4', '3', 'register', '{\"customer_id\":3,\"name\":\"nguyen hien\"}', '127.0.0.1', '2015-12-18 10:18:11');
+INSERT INTO `customer_activity` VALUES ('5', '3', 'order_account', '{\"customer_id\":\"3\",\"name\":\"nguyen hien\",\"order_id\":2}', '127.0.0.1', '2015-12-18 10:18:28');
 
 -- ----------------------------
 -- Table structure for customer_group
@@ -1178,13 +1182,14 @@ CREATE TABLE `customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer_ip
 -- ----------------------------
 INSERT INTO `customer_ip` VALUES ('1', '1', '127.0.0.1', '2015-10-21 16:59:05');
 INSERT INTO `customer_ip` VALUES ('2', '2', '127.0.0.1', '2015-12-01 09:53:39');
+INSERT INTO `customer_ip` VALUES ('3', '3', '127.0.0.1', '2015-12-18 10:18:12');
 
 -- ----------------------------
 -- Table structure for customer_login
@@ -1200,12 +1205,13 @@ CREATE TABLE `customer_login` (
   PRIMARY KEY (`customer_login_id`),
   KEY `email` (`email`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer_login
 -- ----------------------------
-INSERT INTO `customer_login` VALUES ('1', 'admin', '127.0.0.1', '2', '2015-10-21 11:57:40', '2015-12-01 03:51:54');
+INSERT INTO `customer_login` VALUES ('1', 'admin', '127.0.0.1', '3', '2015-10-21 11:57:40', '2015-12-18 04:16:03');
+INSERT INTO `customer_login` VALUES ('2', 'nguyenhien@gmail.com', '127.0.0.1', '1', '2015-12-18 04:17:16', '2015-12-18 04:17:16');
 
 -- ----------------------------
 -- Table structure for customer_online
@@ -1558,10 +1564,10 @@ CREATE TABLE `information_description` (
 -- ----------------------------
 -- Records of information_description
 -- ----------------------------
-INSERT INTO `information_description` VALUES ('4', '1', 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', '', '', '');
 INSERT INTO `information_description` VALUES ('5', '1', 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', '', '', '');
 INSERT INTO `information_description` VALUES ('3', '1', 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', '', '', '');
 INSERT INTO `information_description` VALUES ('6', '1', 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', '', '', '');
+INSERT INTO `information_description` VALUES ('4', '1', 'About Us', '&lt;h1&gt;	About Us&lt;/h1&gt;\r\n&lt;h1&gt;&lt;img style=&quot;width: 855.095px; height: 291.9px;&quot; src=&quot;http://opencart.local/image/catalog/about-1170x400.jpg&quot;&gt;&lt;/h1&gt;\r\n&lt;div class=&quot;space-top-20&quot;&gt;			&lt;div class=&quot;row box-custom-v2&quot;&gt;			&lt;div class=&quot;col-xs-4 col-sm-4 col-md-4 col-lg-4&quot;&gt;					&lt;div class=&quot;panel panel-v3&quot;&gt;							&lt;div class=&quot;panel-heading&quot;&gt;					&lt;h4 class=&quot;panel-title&quot;&gt;Who We Are&lt;/h4&gt;\r\n				&lt;/div&gt;\r\n							&lt;div class=&quot;&quot;&gt;					CoolStuff was founded in 2015 by Helen Osgerby, based on the simple premise that working with good people, making good things, made good sense. 	We have worked hard to source, collect and edit the best of British and Irish design carefully crafted things for the home that are designed and made on these shores.							&lt;/div&gt;\r\n					&lt;/div&gt;\r\n			&lt;/div&gt;\r\n			&lt;div class=&quot;col-xs-4 col-sm-4 col-md-4 col-lg-4&quot;&gt;					&lt;div class=&quot;panel panel-v3&quot;&gt;							&lt;div class=&quot;panel-heading&quot;&gt;					&lt;h4 class=&quot;panel-title&quot;&gt;What We Do&lt;/h4&gt;\r\n				&lt;/div&gt;\r\n							&lt;div class=&quot;&quot;&gt;					Our products are designed with thought to their purpose and are made carefully. They require skill and knowledge from the designer and the maker, they might have a history, they might preserve a tradition, maintain a heritage or support an industry. Almost all have a story to tell.							&lt;/div&gt;\r\n					&lt;/div&gt;\r\n			&lt;/div&gt;\r\n			&lt;div class=&quot;col-xs-4 col-sm-4 col-md-4 col-lg-4&quot;&gt;					&lt;div class=&quot;panel panel-v3&quot;&gt;							&lt;div class=&quot;panel-heading&quot;&gt;					&lt;h4 class=&quot;panel-title&quot;&gt;Our Team&lt;/h4&gt;\r\n				&lt;/div&gt;\r\n				&lt;/div&gt;\r\n					&lt;div class=&quot;media&quot;&gt;			  					&lt;div class=&quot;pull-left&quot;&gt;			  							&lt;img alt=&quot;partner&quot; src=&quot;image/catalog/demo/module/about-1.jpg&quot; class=&quot;img-circle&quot;&gt;			  					&lt;/div&gt;\r\n			  					&lt;div class=&quot;media-body&quot;&gt;			  						&lt;h5&gt;John Doe&lt;/h5&gt;\r\n			  						&lt;span&gt;CEO, Founder&lt;/span&gt;			  					&lt;/div&gt;\r\n						&lt;/div&gt;\r\n						&lt;div class=&quot;media&quot;&gt;			  					&lt;div class=&quot;pull-left&quot;&gt;			  							&lt;img alt=&quot;partner&quot; src=&quot;image/catalog/demo/module/about-2.jpg&quot; class=&quot;img-circle&quot;&gt;			  					&lt;/div&gt;\r\n			  					&lt;div class=&quot;media-body&quot;&gt;			  						&lt;h5&gt;William Doe&lt;/h5&gt;\r\n			  						&lt;span&gt;Sale Director&lt;/span&gt;			  					&lt;/div&gt;\r\n						&lt;/div&gt;\r\n						&lt;div class=&quot;media&quot;&gt;			  					&lt;div class=&quot;pull-left&quot;&gt;			  							&lt;img alt=&quot;partner&quot; src=&quot;image/catalog/demo/module/about-3.jpg&quot; class=&quot;img-circle&quot;&gt;			  					&lt;/div&gt;\r\n			  					&lt;div class=&quot;media-body&quot;&gt;			  						&lt;h5&gt;Emma Doe&lt;/h5&gt;\r\n			  						&lt;span&gt;Sale Director&lt;/span&gt;			  					&lt;/div&gt;\r\n						&lt;/div&gt;\r\n						&lt;/div&gt;\r\n	&lt;/div&gt;\r\n			&lt;/div&gt;', 'about', '', '');
 
 -- ----------------------------
 -- Table structure for information_to_layout
@@ -1577,6 +1583,7 @@ CREATE TABLE `information_to_layout` (
 -- ----------------------------
 -- Records of information_to_layout
 -- ----------------------------
+INSERT INTO `information_to_layout` VALUES ('4', '0', '0');
 
 -- ----------------------------
 -- Table structure for information_to_store
@@ -2044,12 +2051,13 @@ CREATE TABLE `order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of order
 -- ----------------------------
 INSERT INTO `order` VALUES ('1', '0', 'INV-2013-00', '0', 'Your Store', 'http://opencart.local/', '1', '1', 'nguyen', 'hien', 'nguyenhien120@gmail.com', '01649607100', '123', '', 'nguyen', 'hien', 'test', 'test1', 'test1', 'ha noi', 'admin', 'Viet Nam', '230', 'Ha Noi', '3776', '', '[]', 'Cash On Delivery', 'cod', 'nguyen', 'hien', 'test', 'test1', 'test1', 'ha noi', 'admin', 'Viet Nam', '230', 'Ha Noi', '3776', '', '[]', 'Flat Shipping Rate', 'flat.flat', 'test', '186.0000', '1', '0', '0.0000', '0', '', '1', '2', 'USD', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0', 'en-US,en;q=0.5', '2015-10-21 17:01:17', '2015-10-21 17:01:19');
+INSERT INTO `order` VALUES ('2', '0', 'INV-2013-00', '0', 'Your Store', 'http://opencart.local/', '3', '1', 'nguyen', 'hien', 'hien@gmail.com', '123456', '11111', '', 'nguyen', 'hien', 'aaaaa', 'tessss', 'aaaaa', 'aaaddd', '1234', 'Viet Nam', '230', 'Ha Noi', '3776', '', '[]', 'Cash On Delivery', 'cod', 'nguyen', 'hien', 'aaaaa', 'tessss', 'aaaaa', 'aaaddd', '1234', 'Viet Nam', '230', 'Ha Noi', '3776', '', '[]', 'Flat Shipping Rate', 'flat.flat', 'aa', '105.0000', '1', '0', '0.0000', '0', '', '1', '2', 'USD', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0', 'en-US,en;q=0.5', '2015-12-18 10:18:26', '2015-12-18 10:18:27');
 
 -- ----------------------------
 -- Table structure for order_custom_field
@@ -2083,12 +2091,13 @@ CREATE TABLE `order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of order_history
 -- ----------------------------
 INSERT INTO `order_history` VALUES ('1', '1', '1', '0', '', '2015-10-21 17:01:19');
+INSERT INTO `order_history` VALUES ('2', '2', '1', '0', '', '2015-12-18 10:18:27');
 
 -- ----------------------------
 -- Table structure for order_option
@@ -2127,13 +2136,14 @@ CREATE TABLE `order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of order_product
 -- ----------------------------
 INSERT INTO `order_product` VALUES ('1', '1', '30', 'Canon EOS 5D', 'Product 3', '1', '80.0000', '80.0000', '0.0000', '200');
 INSERT INTO `order_product` VALUES ('2', '1', '40', 'iPhone', 'product 11', '1', '101.0000', '101.0000', '0.0000', '0');
+INSERT INTO `order_product` VALUES ('3', '2', '41', 'iMac', 'Product 14', '1', '100.0000', '100.0000', '0.0000', '0');
 
 -- ----------------------------
 -- Table structure for order_recurring
@@ -2227,7 +2237,7 @@ CREATE TABLE `order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `order_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of order_total
@@ -2235,6 +2245,9 @@ CREATE TABLE `order_total` (
 INSERT INTO `order_total` VALUES ('1', '1', 'sub_total', 'Sub-Total', '181.0000', '1');
 INSERT INTO `order_total` VALUES ('2', '1', 'shipping', 'Flat Shipping Rate', '5.0000', '3');
 INSERT INTO `order_total` VALUES ('3', '1', 'total', 'Total', '186.0000', '9');
+INSERT INTO `order_total` VALUES ('4', '2', 'sub_total', 'Sub-Total', '100.0000', '1');
+INSERT INTO `order_total` VALUES ('5', '2', 'shipping', 'Flat Shipping Rate', '5.0000', '3');
+INSERT INTO `order_total` VALUES ('6', '2', 'total', 'Total', '105.0000', '9');
 
 -- ----------------------------
 -- Table structure for order_voucher
@@ -2312,7 +2325,7 @@ INSERT INTO `product` VALUES ('34', 'Product 7', '', '', '', '', '', '', '', '10
 INSERT INTO `product` VALUES ('35', 'Product 8', '', '', '', '', '', '', '', '1000', '5', '', '0', '0', '100.0000', '0', '9', '2009-02-03', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '1', '0', '2009-02-03 18:08:31', '2011-09-30 01:06:17');
 INSERT INTO `product` VALUES ('36', 'Product 9', '', '', '', '', '', '', '', '994', '6', 'catalog/demo/ipod_nano_1.jpg', '8', '0', '100.0000', '100', '9', '2009-02-03', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '1', '0', '2009-02-03 18:09:19', '2011-09-30 01:07:12');
 INSERT INTO `product` VALUES ('40', 'product 11', '', '', '', '', '', '', '', '969', '5', 'catalog/demo/iphone_1.jpg', '8', '1', '101.0000', '0', '9', '2009-02-03', '10.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '1', '0', '2009-02-03 21:07:12', '2011-09-30 01:06:53');
-INSERT INTO `product` VALUES ('41', 'Product 14', '', '', '', '', '', '', '', '977', '5', 'catalog/demo/imac_1.jpg', '8', '1', '100.0000', '0', '9', '2009-02-03', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '1', '0', '2009-02-03 21:07:26', '2011-09-30 01:06:44');
+INSERT INTO `product` VALUES ('41', 'Product 14', '', '', '', '', '', '', '', '976', '5', 'catalog/demo/imac_1.jpg', '8', '1', '100.0000', '0', '9', '2009-02-03', '5.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '0', '1', '0', '2009-02-03 21:07:26', '2011-09-30 01:06:44');
 INSERT INTO `product` VALUES ('42', 'Product 15', '', '', '', '', '', '', '', '990', '5', 'catalog/demo/apple_cinema_30.jpg', '8', '1', '100.0000', '400', '9', '2009-02-04', '12.50000000', '1', '1.00000000', '2.00000000', '3.00000000', '1', '1', '2', '0', '1', '2', '2009-02-03 21:07:37', '2011-09-30 00:46:19');
 INSERT INTO `product` VALUES ('43', 'Product 16', '', '', '', '', '', '', '', '929', '5', 'catalog/demo/macbook_1.jpg', '8', '0', '500.0000', '0', '9', '2009-02-03', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '1', '0', '2009-02-03 21:07:49', '2011-09-30 01:05:46');
 INSERT INTO `product` VALUES ('44', 'Product 17', '', '', '', '', '', '', '', '1000', '5', 'catalog/demo/macbook_air_1.jpg', '8', '1', '1000.0000', '0', '9', '2009-02-03', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '1', '0', '2009-02-03 21:08:00', '2011-09-30 01:05:53');
@@ -2320,7 +2333,7 @@ INSERT INTO `product` VALUES ('45', 'Product 18', '', '', '', '', '', '', '', '9
 INSERT INTO `product` VALUES ('46', 'Product 19', '', '', '', '', '', '', '', '1000', '5', 'catalog/demo/sony_vaio_1.jpg', '10', '1', '1000.0000', '0', '9', '2009-02-03', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '1', '0', '2009-02-03 21:08:29', '2011-09-30 01:06:39');
 INSERT INTO `product` VALUES ('47', 'Product 21', '', '', '', '', '', '', '', '1000', '5', 'catalog/demo/hp_1.jpg', '7', '1', '100.0000', '400', '9', '2009-02-03', '1.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '0', '1', '0', '1', '0', '2009-02-03 21:08:40', '2011-09-30 01:05:28');
 INSERT INTO `product` VALUES ('48', 'product 20', 'test 1', '', '', '', '', '', 'test 2', '995', '5', 'catalog/demo/ipod_classic_1.jpg', '8', '1', '100.0000', '0', '9', '2009-02-08', '1.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '2', '1', '1', '0', '1', '0', '2009-02-08 17:21:51', '2011-09-30 01:07:06');
-INSERT INTO `product` VALUES ('49', 'SAM1', '', '', '', '', '', '', '', '0', '8', 'catalog/demo/samsung_tab_1.jpg', '0', '1', '199.9900', '0', '9', '2011-04-25', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '0', '2011-04-26 08:57:34', '2011-09-30 01:06:23');
+INSERT INTO `product` VALUES ('49', 'SAM1', '', '', '', '', '', '', '', '0', '8', 'catalog/demo/samsung_tab_1.jpg', '0', '1', '199.9900', '0', '9', '2011-04-25', '0.00000000', '1', '0.00000000', '0.00000000', '0.00000000', '1', '1', '1', '1', '1', '1', '2011-04-26 08:57:34', '2011-09-30 01:06:23');
 
 -- ----------------------------
 -- Table structure for product_attribute
@@ -3240,7 +3253,7 @@ CREATE TABLE `url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM AUTO_INCREMENT=845 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=848 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of url_alias
@@ -3250,7 +3263,7 @@ INSERT INTO `url_alias` VALUES ('836', 'category_id=20', 'desktops');
 INSERT INTO `url_alias` VALUES ('834', 'category_id=26', 'pc');
 INSERT INTO `url_alias` VALUES ('835', 'category_id=27', 'mac');
 INSERT INTO `url_alias` VALUES ('730', 'manufacturer_id=8', 'apple');
-INSERT INTO `url_alias` VALUES ('772', 'information_id=4', 'about_us');
+INSERT INTO `url_alias` VALUES ('847', 'information_id=4', 'about_us');
 INSERT INTO `url_alias` VALUES ('768', 'product_id=42', 'test');
 INSERT INTO `url_alias` VALUES ('789', 'category_id=34', 'mp3-players');
 INSERT INTO `url_alias` VALUES ('781', 'category_id=36', 'test2');

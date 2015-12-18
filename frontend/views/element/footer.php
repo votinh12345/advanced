@@ -1,7 +1,7 @@
-
-
+<?php
+use yii\helpers\Url;
+?>
 <div id="pavo-footer-top" class="footer-top ">
-
     <div class="inside space-80 col-nopadding">  
         <div class="row">           
             <div class="col-md-3 col-sm-3 col-xs-12">               
@@ -12,7 +12,6 @@
                     <div class="fbox-body">
                         <h4>worldwide delivery</h4>
                         <p>On order over $150.00</p>
-
                     </div>
                 </div>
             </div>
@@ -63,10 +62,10 @@
                         <div class="panel-heading"><h4 class="panel-title">Information</h4></div>
                         <div class="panel-body">
                             <ul class="list-unstyled">
-                                <li><a href="index.php@route=information_2Finformation&amp;information_id=4">About Us</a></li>
-                                <li><a href="index.php@route=information_2Finformation&amp;information_id=6">Delivery Information</a></li>
-                                <li><a href="index.php@route=information_2Finformation&amp;information_id=3">Privacy Policy</a></li>
-                                <li><a href="index.php@route=information_2Finformation&amp;information_id=5">Terms &amp; Conditions</a></li>
+                                <li><a href="<?= Url::to('about');?>">About Us</a></li>
+                                <li><a href="<?= Url::to('delivery');?>">Delivery Information</a></li>
+                                <li><a href="<?= Url::to('policy');?>">Privacy Policy</a></li>
+                                <li><a href="<?= Url::to('term');?>">Terms &amp; Conditions</a></li>
                             </ul>
                         </div>
                     </div>

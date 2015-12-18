@@ -45,6 +45,7 @@ class AppAsset extends AssetBundle
         'assets/js/layerslider/jquery.themepunch.plugins.min.js',
         'assets/js/layerslider/jquery.themepunch.revolution.min.js',
         'assets/js/perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js',
+        'assets/js/jssor.slider.mini.js',
         'assets/js/app.js'
     ];
     public $depends = [

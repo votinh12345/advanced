@@ -54,28 +54,7 @@ $category = MenuHelper::getAllMenu();
                                                 </div>
                                             </div>
                                         </li>
-                                        
-                                        <li class="parent dropdown  aligned-left">
-                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                                <span class="menu-title">Information</span></a>
-                                            <div class="dropdown-menu level1">
-                                                <div class="dropdown-menu-inner">
-                                                    <div class="row">
-                                                        <div data-type="menu" class="mega-col col-xs-12 col-sm-12 col-md-12">
-                                                            <div class="mega-col-inner">
-                                                                <ul>
-                                                                    <li class=""><a href="#"><span class="menu-title">About Us</span></a></li>
-                                                                    <li class=""><a href="#"><span class="menu-title">Delivery Information</span></a></li>
-                                                                    <li class=""><a href="#"><span class="menu-title">Privacy Policy</span></a></li>
-                                                                    <li class=" "><a href="#"><span class="menu-title">Terms & Conditions</span></a></li>                                                                    
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        
+                                                                                                                        
                                         <li class="parent dropdown  aligned-left">
                                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                                                 <span class="menu-title">Customer Service</span></a>
@@ -94,28 +73,7 @@ $category = MenuHelper::getAllMenu();
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        
-                                        <li class="parent dropdown  aligned-left">
-                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                                <span class="menu-title">Extras</span></a>
-                                            <div class="dropdown-menu level1">
-                                                <div class="dropdown-menu-inner">
-                                                    <div class="row">
-                                                        <div data-type="menu" class="mega-col col-xs-12 col-sm-12 col-md-12">
-                                                            <div class="mega-col-inner">
-                                                                <ul>
-                                                                    <li class=""><a href="#"><span class="menu-title">Brands</span></a></li>
-                                                                    <li class=""><a href="#"><span class="menu-title">Gift Vouchers</span></a></li>
-                                                                    <li class=""><a href="#"><span class="menu-title">Affiliates</span></a></li>
-                                                                    <li class=""><a href="#"><span class="menu-title">Specials</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        </li>                                                                               
                                         
                                     </ul>				
                                 </div>
@@ -177,18 +135,6 @@ $category = MenuHelper::getAllMenu();
 
         <div class="panel panel-menu">
             <div class="panel-heading">
-                <h3 class="panel-title">Information</h3>
-            </div>
-            <div class="panel-body tree-menu">
-                <ul class="list-unstyled">						
-                    <li><a href="#">About Us</a></li>						
-                    <li><a href="#">Delivery Information</a></li>						
-                    <li><a href="#">Privacy Policy</a></li>						
-                    <li><a href="#">Terms & Conditions</a></li>										
-                </ul>        	       		  
-            </div>
-
-            <div class="panel-heading">
                 <h3 class="panel-title">Customer Service</h3>
             </div>
             <div class="panel-body tree-menu">
@@ -196,27 +142,15 @@ $category = MenuHelper::getAllMenu();
                     <li><a href="#">Contact Us</a></li>						
                     <li><a href="#">Returns</a></li>						
                     <li><a href="#">Site Map</a></li>						                    								
-                </ul>          		  
-            </div>
-
-            <div class="panel-heading">
-                <h3 class="panel-title">Extras</h3>
-            </div>
-            <div class="panel-body tree-menu">
-                <ul class="list-unstyled">						
-                    <li><a href="#">Brands</a></li>						
-                    <li><a href="#">Gift Vouchers</a></li>						
-                    <li><a href="#">Affiliates</a></li>
-                    <li><a href="#">Specials</a></li>
-                </ul>        	 
+                </ul>   
                 <ul class="list-unstyled list-inline list-social">	
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>	
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>	
                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>	
                     <li><a href="#"><i class="fa fa-google"></i></a></li>
                     <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                </ul>        		  
-            </div>
+                </ul>
+            </div>            
 
         </div>
     </div>

@@ -8,7 +8,7 @@ $category = MenuHelper::getAllMenu();
         <div class="row">
             <div class="col-sm-2">
                 <div id="logo">
-                    <a href="#"><img src="assets/images/logo.png" title="Your Store" alt="Your Store" class="img-responsive" /></a>
+                    <a href="<?= Url::to('/');?>"><img src="assets/images/logo.png" title="Your Store" alt="Your Store" class="img-responsive" /></a>
                 </div>
             </div>
             <div class="col-sm-8">
